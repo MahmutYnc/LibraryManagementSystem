@@ -1,5 +1,7 @@
 package Library;
 
+import Admin.AdminLogin;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -10,6 +12,8 @@ public class LoginSection {
     JButton adminButton = new JButton("Admin");
     JButton librarianbutton = new JButton("Librarian");
     Dimension dimension = new Dimension(150,70);
+
+    AdminLogin al;
 
     public LoginSection() {
 
@@ -38,6 +42,8 @@ public class LoginSection {
         adminButton.addActionListener(actionEvent -> {
             //open Admin frame
             System.out.println("Opening Admin Panel");
+            al = new AdminLogin();
+            loginFrame.dispose();
         });
         librarianbutton.addActionListener(actionEvent -> {
             //open Librarian frame
