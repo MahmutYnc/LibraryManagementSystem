@@ -3,6 +3,8 @@ package Admin;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class AdminLogin {
     JFrame loginFrame = new JFrame("Login Section");
@@ -56,9 +58,22 @@ public class AdminLogin {
         loginPanel.add(nameField);
         nameField.setBounds(250,250,100,25);
         nameField.setLocation(250,150);
+        nameField.addMouseListener(new MouseAdapter(){
+            @Override
+            public void mouseClicked(MouseEvent e){
+                nameField.setText("");
+            }
+        });
         loginPanel.add(passwordField);
         passwordField.setBounds(250,250,100,25);
         passwordField.setLocation(250,180);
+        //passwordField.setOpaque(false);
+        passwordField.addMouseListener(new MouseAdapter(){
+            @Override
+            public void mouseClicked(MouseEvent e){
+                passwordField.setText("");
+            }
+        });
 
         Font f = new Font("serif", Font.BOLD, 34);
         title.setFont(f);
@@ -75,5 +90,6 @@ public class AdminLogin {
         loginFrame.add(loginPanel);
 
     }
+
 
 }
