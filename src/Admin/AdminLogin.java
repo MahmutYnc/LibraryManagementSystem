@@ -1,5 +1,7 @@
 package Admin;
 
+import Library.LoginSection;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -19,6 +21,8 @@ public class AdminLogin {
 
     JTextField nameField = new JTextField("Name here!");
     JTextField passwordField = new JTextField("Password here!");
+
+    String name, password;
 
     public AdminLogin() {
         loginButton.setSize(dimension);
@@ -89,6 +93,33 @@ public class AdminLogin {
         loginFrame.setVisible(true);
         loginFrame.add(loginPanel);
 
+        goBackAction();
+        loginAction();
+    }
+
+    public void goBackAction(){
+        goBack.addActionListener(actionEvent -> {
+            //return to the login section
+            LoginSection loginSection = new LoginSection();
+            loginFrame.dispose();
+            System.out.println("it should return to the last page");
+        });
+    }
+    public void loginAction(){
+        loginButton.addActionListener(actionEvent -> {
+            //Check the users id, password and if it is matches login to the system
+            name = nameField.getText();
+            password = passwordField.getText();
+
+            if (name.equalsIgnoreCase("admin") && password.equals("admin1")){
+                //access to system
+                System.out.println("Accessing to the system");
+            }else {
+                //now we should give some errors to the user and delete the password field
+                passwordField.setText("");
+                JOptionPane.showMessageDialog(null, "You have entered wrong name/password please try again!");
+            }
+        });
     }
 
 
