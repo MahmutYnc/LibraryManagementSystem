@@ -114,6 +114,8 @@ public class AdminLogin {
             if (name.equalsIgnoreCase("admin") && password.equals("admin1")){
                 //access to system
                 System.out.println("Accessing to the system");
+                loginFrame.dispose();
+                AdminScreen as = new AdminScreen();
             }else {
                 //now we should give some errors to the user and delete the password field
                 passwordField.setText("");
