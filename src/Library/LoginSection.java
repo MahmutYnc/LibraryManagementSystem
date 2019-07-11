@@ -1,6 +1,7 @@
 package Library;
 
 import Admin.AdminLogin;
+import Admin.AdminScreen;
 
 import javax.swing.*;
 import java.awt.*;
@@ -44,6 +45,7 @@ public class LoginSection {
             System.out.println("Opening Admin Panel");
             al = new AdminLogin();
             loginFrame.dispose();
+            AdminScreen as = new AdminScreen();
         });
         librarianbutton.addActionListener(actionEvent -> {
             //open Librarian frame
