@@ -86,6 +86,7 @@ public class AdminScreen extends JFrame {
         setFocusable(true);
         setVisible(true);
 
+        fillTable();
     }
     public void fillTable(){
         DefaultTableModel model = new DefaultTableModel(columnNames, 0);

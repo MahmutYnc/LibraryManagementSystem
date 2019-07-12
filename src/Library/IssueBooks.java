@@ -4,7 +4,7 @@ public class IssueBooks {
     private int ID, studentID, studentContact;
     private String bookCallNo, studentName, issueddate;
 
-    public IssueBooks(int ID,  String bookCallNo, int studentID, String studentName, int studentContact, String issueddate) {
+    public IssueBooks(int ID, String bookCallNo, int studentID, String studentName, int studentContact, String issueddate) {
         this.ID = ID;
         this.studentID = studentID;
         this.studentContact = studentContact;
